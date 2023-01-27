@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class Shape : MonoBehaviour
 {
+    ShapesManager shapesManager;
     Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        
+        GameObject shapesManagerObject = GameObject.FindGameObjectWithTag("ShapesManager");
+        if (shapesManagerObject) {
+            shapesManager = shapesManagerObject.GetComponent<ShapesManager>();
+        }
+
+        shapesManager.GravityChangedCallback += SetGravityScaleBySM;
+
+        // init set gravity
+        SetGravityScale(shapesManager.gravity);
     }
 
     // Update is called once per frame
@@ -24,5 +35,9 @@ public class Shape : MonoBehaviour
 
     public void SetGravityScale(float g) {
         rb.gravityScale = g;
+    }
+
+    public void SetGravityScaleBySM() {
+        SetGravityScale(shapesManager.gravity);
     }
 }

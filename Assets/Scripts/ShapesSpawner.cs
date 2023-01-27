@@ -11,7 +11,7 @@ public class ShapesSpawner : MonoBehaviour
     public float repeatRate = 4f;
 
     // color palette
-    [SerializeField] string[] colors = {"7DCD85", "80AB82", "778472", 
+    string[] colors = {"7DCD85", "80AB82", "778472", 
         "987284", "9DBF9E", "D0D6B5", "F9B5AC", "EE7674"};
 
     // shapes pool
