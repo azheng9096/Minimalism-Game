@@ -5,22 +5,31 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    public float timeValue = 150;
+    public float initTimeValue = 150;
+    float timeValue;
     [SerializeField] TextMeshProUGUI timerText;
+
+    [SerializeField] GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        timeValue = initTimeValue;
     }
 
     // Update is called once per frame
     void Update()
     {
         if (timeValue > 0) {
-            timeValue -= Time.deltaTime;    
+            timeValue -= Time.deltaTime;
+            GameManager.endGame = false;  
         } else {
             timeValue = 0;
+
+            if (!GameManager.endGame) {
+                gameManager.EndGame();
+                Destroy(gameObject); // prevent EndGame() from triggering again right before restart
+            }
         }
 
         DisplayTime(timeValue);
