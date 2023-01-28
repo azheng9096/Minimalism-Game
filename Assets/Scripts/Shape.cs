@@ -23,6 +23,10 @@ public class Shape : MonoBehaviour
         SetGravityScale(shapesManager.gravity);
     }
 
+    void OnDestroy() {
+        shapesManager.GravityChangedCallback -= SetGravityScaleBySM;
+    }
+
     // Update is called once per frame
     void Update()
     {

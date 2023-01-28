@@ -8,7 +8,14 @@ public class ShapesSpawner : MonoBehaviour
     public float left = -8, right = 8, top = 12, bottom = 8;
 
     // frequency - will spawn shape every repeatRate seconds
-    public float repeatRate = 4f;
+    public float repeatRate = 2.5f;
+
+    // change repeat rate
+    [SerializeField] float changeRepeatRateFactor = 0.5f;
+    [SerializeField] float changeRepeatRateAmt = 0.5f;
+    [SerializeField] float minRepeatRate = 0.25f;
+    [SerializeField] float changeRepeatRateFreq = 20f;
+
 
     // color palette
     string[] colors = {"7DCD85", "80AB82", "778472", 
@@ -20,7 +27,9 @@ public class ShapesSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnShape", 2f, repeatRate);
+        // InvokeRepeating("ChangeSpawnRateByFactor", 1f + changeRepeatRateFreq, changeRepeatRateFreq);
+        InvokeRepeating("ChangeSpawnRate", 1f + changeRepeatRateFreq, changeRepeatRateFreq);
+        InvokeRepeating("SpawnShape", 1f, repeatRate);
     }
 
     // Update is called once per frame
@@ -48,5 +57,31 @@ public class ShapesSpawner : MonoBehaviour
         if(ColorUtility.TryParseHtmlString("#" + colors[randomColorInd], out color)) {
             shape.GetComponent<SpriteRenderer>().color = color;
         }
+    }
+
+    void ChangeSpawnRateByFactor() {
+        CancelInvoke("SpawnShape");
+        
+        // calculate new repeatRate
+        float newRepeatRate = repeatRate * changeRepeatRateFactor;
+        if (newRepeatRate >= minRepeatRate) {
+            repeatRate = newRepeatRate;
+        }
+
+        InvokeRepeating("SpawnShape", 2f, repeatRate);
+    }
+
+    void ChangeSpawnRate() {
+        CancelInvoke("SpawnShape");
+        
+        // calculate new repeatRate
+        float newRepeatRate = repeatRate - changeRepeatRateAmt;
+        if (newRepeatRate >= minRepeatRate) {
+            repeatRate = newRepeatRate;
+        } else {
+            repeatRate = minRepeatRate;
+        }
+
+        InvokeRepeating("SpawnShape", 2f, repeatRate);
     }
 }
