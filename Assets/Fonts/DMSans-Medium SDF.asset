@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: DMSans-Medium SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -1815720409
   material: {fileID: 8874428632546155265}
-  materialHashCode: 0
+  materialHashCode: 1631222439
   m_Version: 1.1.0
   m_SourceFontFileGUID: 0cf0878c4a64dd14592addb13e0de6fa
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 0cf0878c4a64dd14592addb13e0de6fa, type: 3}
@@ -2680,9 +2680,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
