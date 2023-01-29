@@ -18,6 +18,9 @@ public class BucketMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Vector2 newPosition = transform.position;
+        newPosition.x = Mathf.SmoothStep(startPosition, startPosition + distance, Mathf.PingPong(Time.time * speed, 1));
+        transform.position = newPosition;
+
     }
 }
