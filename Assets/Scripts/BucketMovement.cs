@@ -5,7 +5,7 @@ using UnityEngine;
 public class BucketMovement : MonoBehaviour
 {
     public float speed = .5f;
-    public float distance = 5;
+    public float distance = 17;
     private float startPosition;
 
     // Start is called before the first frame update
