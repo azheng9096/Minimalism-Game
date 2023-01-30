@@ -10,10 +10,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI onScreenScoreText;
     [SerializeField] TextMeshProUGUI onScreenHighScoreText;
 
-    [SerializeField] GameObject PauseMenu;
+    // [SerializeField] GameObject PauseMenu;
     [SerializeField] GameObject EndMenu;
 
-    public static bool isPaused = false;
+    //public static bool isPaused = false;
     public static bool endGame = false;
 
 
@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (!endGame && Input.GetKeyDown(KeyCode.Escape)) {
             if (isPaused) {
                 ResumeGame();
@@ -40,29 +41,30 @@ public class GameManager : MonoBehaviour
                 PauseGame();
             }
         }
+        */
 
         onScreenScoreText.text = score.ToString();
     }
 
     
     public void ResumeGame() {
-        PauseMenu.SetActive(false);
+        // PauseMenu.SetActive(false);
         EndMenu.SetActive(false);
         Time.timeScale = 1f;
-        isPaused = false;
+        // isPaused = false;
         endGame = false;
     }
 
     public void PauseGame() {
-        PauseMenu.SetActive(true);
+        // PauseMenu.SetActive(true);
         Time.timeScale = 0f;
-        isPaused = true;
+        // isPaused = true;
     }
 
     public void EndGame() {
         Time.timeScale = 0f;
         endGame = true;
-        isPaused = true;
+        // isPaused = true;
 
         EndMenu.SetActive(true);
 
