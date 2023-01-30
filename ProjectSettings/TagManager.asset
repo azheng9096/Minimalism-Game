@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Shape
   - ShapesManager
+  - Circle
+  - Square
+  - Triangle
   layers:
   - Default
   - TransparentFX
