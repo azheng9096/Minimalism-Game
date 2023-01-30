@@ -18,8 +18,8 @@ public class ShapesSpawner : MonoBehaviour
 
 
     // color palette
-    string[] colors = {"7DCD85", "80AB82", "778472", 
-        "987284", "9DBF9E", "D0D6B5", "F9B5AC", "EE7674"};
+    string[] colors = {"7DCD85", "F06543", "38023B", "03F7EB", "AB2346", 
+        "00B295", "F09D51", "F9B5AC", "EE7674"};
 
     // shapes pool
     [SerializeField] GameObject[] shapes;
