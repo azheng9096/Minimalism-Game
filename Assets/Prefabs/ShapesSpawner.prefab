@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5717338557483205651}
   - component: {fileID: 5717338557483205660}
+  - component: {fileID: -3186724463248368243}
   m_Layer: 0
   m_Name: ShapesSpawner
   m_TagString: Untagged
@@ -57,3 +58,19 @@ MonoBehaviour:
   - {fileID: 4754527517520053254, guid: afa83f3448e28124ab704287afdc2591, type: 3}
   - {fileID: 7952862186937395191, guid: c6bdb1fe087b0194fa196354a1a9ba64, type: 3}
   - {fileID: 5961685050748411827, guid: eac35f92ff85843479bf619b21461715, type: 3}
+--- !u!114 &-3186724463248368243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5717338557483205661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80070be60bd761c42bd3a0d4a23a9337, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class ShapeChanger : MonoBehaviour
 {
-    
+    // shapes pool
+    [SerializeField] GameObject[] shapes;
+
+    SpriteRenderer m_SpriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-        
+        m_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+       if (Input.GetButtonDown("Jump")) {
+            
+       }
 
     }
+
+    
 }
