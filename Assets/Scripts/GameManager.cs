@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public int score = 0;
     [SerializeField] TextMeshProUGUI onScreenScoreText;
+    [SerializeField] TextMeshProUGUI onScreenHighScoreText;
 
     [SerializeField] GameObject PauseMenu;
     [SerializeField] GameObject EndMenu;
@@ -24,7 +25,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if (onScreenHighScoreText != null) {
+            onScreenHighScoreText.text = (PublicVars.highScore).ToString();
+        }
     }
 
     // Update is called once per frame
