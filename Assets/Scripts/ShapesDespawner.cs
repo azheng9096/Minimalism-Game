@@ -17,7 +17,7 @@ public class ShapesDespawner : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("Shape")) {
+        if (other.CompareTag("Circle") || other.CompareTag("Square") || other.CompareTag("Triangle")) {
             Destroy(other.gameObject);
         }
     }
