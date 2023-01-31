@@ -190,6 +190,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8822721338804549440, guid: 4c44ac92ee93f5447be7811df7f5e539, type: 3}
+      propertyPath: retryText
+      value: 
+      objectReference: {fileID: 1381633595}
     - target: {fileID: 8822721338860141504, guid: 4c44ac92ee93f5447be7811df7f5e539, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -837,7 +841,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PRESS [SPACE] TO RETRY
+  m_text: ...wait one second...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e76e2cce699f87741964e18984b75339, type: 2}
   m_sharedMaterial: {fileID: -2874676966551429875, guid: e76e2cce699f87741964e18984b75339, type: 2}
