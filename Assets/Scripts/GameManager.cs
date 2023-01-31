@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     //public static bool isPaused = false;
     public static bool endGame = false;
+    bool onCooldown = true;
+    [SerializeField] TextMeshProUGUI retryText;
 
 
     [Header("End Menu Text")]
@@ -44,10 +46,18 @@ public class GameManager : MonoBehaviour
         */
 
         if (endGame && Input.GetKeyDown(KeyCode.Space)) {
-            MainMenu();
+            if (!onCooldown) {
+                MainMenu();
+            }
         }
 
         onScreenScoreText.text = score.ToString();
+    }
+
+    IEnumerator EndCooldown(float seconds) {
+        yield return new WaitForSecondsRealtime(seconds);
+        onCooldown = false;
+        retryText.text = "PRESS [SPACE] TO RETRY";
     }
 
     
@@ -83,6 +93,8 @@ public class GameManager : MonoBehaviour
         } else {
             newHighScoreText.SetActive(false);
         }
+
+        StartCoroutine(EndCooldown(1.5f));
     }
 
     public void Retry() {
