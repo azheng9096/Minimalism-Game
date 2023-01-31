@@ -43,6 +43,10 @@ public class GameManager : MonoBehaviour
         }
         */
 
+        if (endGame && Input.GetKeyDown(KeyCode.Space)) {
+            MainMenu();
+        }
+
         onScreenScoreText.text = score.ToString();
     }
 
