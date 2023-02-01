@@ -76,6 +76,11 @@ public class ShapesSpawner : MonoBehaviour
         
         // calculate new repeatRate
         float newRepeatRate = repeatRate - changeRepeatRateAmt;
+
+        if (newRepeatRate <= 1) {
+            changeRepeatRateAmt = 0.25f;
+        }
+
         if (newRepeatRate >= minRepeatRate) {
             repeatRate = newRepeatRate;
         } else {
