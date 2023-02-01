@@ -87,6 +87,6 @@ public class ShapesSpawner : MonoBehaviour
             repeatRate = minRepeatRate;
         }
 
-        InvokeRepeating("SpawnShape", 0f, repeatRate);
+        InvokeRepeating("SpawnShape", 2f, repeatRate);
     }
 }
