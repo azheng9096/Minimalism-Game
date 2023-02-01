@@ -1266,7 +1266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5717338557483205660, guid: a4d638730630917488d539392f4cc48f, type: 3}
       propertyPath: minRepeatRate
-      value: 0.75
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5717338557483205661, guid: a4d638730630917488d539392f4cc48f, type: 3}
       propertyPath: m_Name
